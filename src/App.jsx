@@ -1,21 +1,9 @@
 import React, { useState } from 'react';
-import SearchBox from './SearchBox';
-import WeathetDisplay from './WeatherDisplay';
-import FiveDayForcast from './FiveDayForecast';
+import SearchBox from './components/SearchBox';
+import WeathetDisplay from './components/WeatherDisplay';
+import FiveDayForcast from './components/FiveDayForecast';
 
 function App() {
-  const [search, setSearch] = useState('');
-
-  // ??? placeholder
-  const handleSearch = () => {
-    console.log(`Searching for: ${search}`);
-    // Add your search logic here (e.g., API call)
-  };
-  // This function is called when a button is clicked
-  const handleButtonClick = (city) => {
-    setSearch(city);
-    handleSearch();
-  };
 
   //Hardcoded weather data for demonstration purposes
 const sampleWeatherData = {
@@ -37,7 +25,7 @@ const sampleWeatherData = {
   <div> 
     <h1>Weather Forecast App</h1>
     <h2>Search Box test</h2>
-    <SearchBox search={search} setSearch={setSearch} handleSearch={handleSearch} />
+    <SearchBox />
     <WeathetDisplay weatherData={sampleWeatherData} />
     <FiveDayForcast FiveDayForcast />
   </div>
